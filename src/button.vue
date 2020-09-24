@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button">
+  <button class="g-button"  :class="{['icon-' + iconPosition]:true}"  >
     <g-icon class="icon" :icon="name"></g-icon>
    <slot/>
   </button>
@@ -7,7 +7,8 @@
 <script>
 export default {
   props:{
-    name:''
+    name:'',
+    iconPosition:''
   }
 }
 </script>
@@ -19,6 +20,10 @@ export default {
   border-radius: var(--border-radius);
   border:1px solid var(--border-color);
   background: var(--button-background);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
   &:hover{
     border-color: var(--border-color-hover);
   }
@@ -30,6 +35,13 @@ export default {
   }
   > .icon{
     margin-right: .1em;
+  }
+  &.icon-right {
+    .icon {
+      order: 1;
+      margin-right: 0;
+      margin-left: .1em;
+    }
   }
 }
 </style>
