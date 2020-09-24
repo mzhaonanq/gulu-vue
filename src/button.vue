@@ -1,12 +1,16 @@
 <template>
   <button class="g-button"  :class="{['icon-' + iconPosition]:true}" @click="$emit('click')">
-    <g-icon v-if="name&&!loading" class="icon" :icon="name"></g-icon>
     <g-icon v-if="loading" class="icon loading" icon="loading"></g-icon>
+    <g-icon v-if="name&&!loading" class="icon" :icon="name"></g-icon>
    <slot/>
   </button>
 </template>
 <script>
+import Icon from './icon.vue'
 export default {
+  components:{
+    'g-icon':Icon
+  },
   props:{
     name:{
       type:String,
@@ -24,6 +28,7 @@ export default {
      default:false
    }
   }
+
 }
 </script>
 <style lang="scss">
