@@ -8,9 +8,21 @@
 <script>
 export default {
   props:{
-    name:'',
-    iconPosition:'',
-    loading:false
+    name:{
+      type:String,
+      default:''
+    },
+    iconPosition: {
+      type:String,
+      default: 'left',
+      validator(value) {
+        return value==='left'|| value==='right'
+      }
+    },
+   loading:{
+     type:Boolean,
+     default:false
+   }
   }
 }
 </script>
