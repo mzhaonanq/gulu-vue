@@ -22,5 +22,8 @@
   "homepage": "https://github.com/mzhaonanq/gulu-vue#readme",
   "dependencies": {
     "vue": "^2.6.12"
+  },
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
   }
 }
