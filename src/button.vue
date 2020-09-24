@@ -1,8 +1,15 @@
 <template>
-  <button>按钮</button>
+  <button class="g-button">
+    <g-icon class="icon" :icon="name"></g-icon>
+   <slot/>
+  </button>
 </template>
 <script>
-export default {}
+export default {
+  props:{
+    name:''
+  }
+}
 </script>
 <style lang="scss">
 .g-button{
@@ -20,6 +27,9 @@ export default {}
   }
   &:focus{
     outline: none;
+  }
+  > .icon{
+    margin-right: .1em;
   }
 }
 </style>
