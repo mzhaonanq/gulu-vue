@@ -26,31 +26,48 @@
     #app{
       margin: 20px;
     }
-    .box{
-      margin: 20px;
-    }
+    /*.box{*/
+    /*  margin: 20px;*/
+    /*}*/
   </style>
 </head>
 <body>
 <div id="app">
-  <div class="box">
-  <g-button name="setting" :loading="loading1" @click="loading1=!loading1">按钮</g-button>
-  <g-button name="setting" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
-  <g-buttongroup>
-  <g-button name="left" :loading="loading3" @click="loading3=!loading3">上一页</g-button>
-  <g-button name="right" :loading="loading4" icon-position="right" @click="loading4=!loading4">下一页</g-button>
-  </g-buttongroup>
-  </div>
-  <div class="box">
-  <g-input value="张三" disabled></g-input>
-  <g-input value="李四" readonly></g-input>
-  <g-input value="王五" ></g-input>
-  </div>
-  <div class="box">
-  <g-input value="王" name="error" error="请输入两个字及以上的姓名"></g-input>
-  </div>
-
-
+  <!--  <div class="box">-->
+  <!--  <g-button name="setting" :loading="loading1" @click="loading1=!loading1">按钮</g-button>-->
+  <!--  <g-button name="setting" :loading="loading2" @click="loading2=!loading2">按钮</g-button>-->
+  <!--  <g-buttongroup>-->
+  <!--  <g-button name="left" :loading="loading3" @click="loading3=!loading3">上一页</g-button>-->
+  <!--  <g-button name="right" :loading="loading4" icon-position="right" @click="loading4=!loading4">下一页</g-button>-->
+  <!--  </g-buttongroup>-->
+  <!--  </div>-->
+  <!--  <div class="box">-->
+  <!--  <g-input value="张三" disabled></g-input>-->
+  <!--  <g-input value="李四" readonly></g-input>-->
+  <!--  <g-input value="王五" ></g-input>-->
+  <!--  </div>-->
+  <!--  <div class="box">-->
+  <!--  <g-input value="王" name="error" error="请输入两个字及以上的姓名"></g-input>-->
+  <!--  </div>-->
+  <g-row>
+    <g-column>1</g-column>
+    <g-column>1</g-column>
+  </g-row>
+  <g-row>
+    <g-column>1</g-column>
+    <g-column>1</g-column>
+    <g-column>1</g-column>
+  </g-row>
+  <g-row>
+    <g-column>1</g-column>
+    <g-column>1</g-column>
+    <g-column>1</g-column>
+    <g-column>1</g-column>
+  </g-row>
+  <g-row>
+    <g-column span="1" >1</g-column>
+    <g-column span="23">23</g-column>
+  </g-row>
 </div>
 <script src="./src/app.js"></script>
 </body>
