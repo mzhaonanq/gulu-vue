@@ -1,45 +1,35 @@
 <template>
   <label class="wrapper" :class="{error: error}">
-    <input type="text" :value="value" :disabled="disabled" :readonly="readonly">
-    <template v-if="error">
+    <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
+    @change="$emit('change',$event)"
+    @input="$emit('input',$event)"
+    @focus="$emit('focus',$event)"
+    @blur="$emit('blur',$event)"
+    />
+  <template v-if="error">
       <g-icon :icon="name" class="g-icon"></g-icon>
       <span class="errorMessage">{{ error }}</span>
-    </template>
+  </template>
   </label>
-</template>
+ </template>
 
 <script>
 import Icon from './icon'
 
 export default {
   name: 'GuluInput',
-  components: {
-    'g-icon': Icon
-  },
+  components: {'g-icon': Icon},
   props: {
-    value: {
-      type: String
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    readonly: {
-      type: Boolean,
-      default: false,
-    },
-    error: {
-      type: String
-    },
-    name: {
-      type: String,
-      default: ''
-    }
+    value: {type: String},
+    disabled: {type: Boolean, default: false},
+    readonly: {type: Boolean, default: false,},
+    error: {type: String},
+    name: {type: String, default: ''}
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 $button-height: 32px;
 $font-size: 14px;
 $button-background: #fff;
