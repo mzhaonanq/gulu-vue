@@ -1,10 +1,19 @@
 <template>
-  <div class="column" :class="[`col-${span}`,`offset-${offset}`]">
+  <div class="column" :class="[span&&`col-${span}`,offset&&`offset-${offset}`]"
+  :style="{paddingLeft: gutter/2 +'px', paddingRight: gutter/2 + 'px'}">
+    <div style="border:1px solid green;height: 100px">
     <slot></slot>
+    </div>
+
   </div>
 </template>
 <script>
 export default {
+  data(){
+    return{
+      gutter: 0
+    }
+  },
   props:{
     span:{
       type:[Number,String]
@@ -18,9 +27,8 @@ export default {
 <style lang="scss" scoped>
 .column{
   height: 100px;
-  background: grey;
   width: 50%;
-  border:1px solid red;
+  //border:1px solid red;
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
