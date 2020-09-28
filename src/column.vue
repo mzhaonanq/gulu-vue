@@ -1,17 +1,24 @@
 <template>
-  <div class="column" :class="[span&&`col-${span}`,offset&&`offset-${offset}`]"
-  :style="{paddingLeft: gutter/2 +'px', paddingRight: gutter/2 + 'px'}">
-    <div style="border:1px solid green;height: 100px">
+  <div class="column" :class="colClass"
+  :style="colStyle">
     <slot></slot>
     </div>
-
-  </div>
 </template>
 <script>
 export default {
   data(){
     return{
       gutter: 0
+    }
+  },
+  computed:{
+    colClass(){
+      let {span,offset} = this
+    return  [span&&`col-${span}`,offset&&`offset-${offset}`]
+    },
+    colStyle(){
+       let {gutter}=this
+      return {paddingLeft: gutter/2 +'px', paddingRight: gutter/2 + 'px'}
     }
   },
   props:{
@@ -26,7 +33,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .column{
-  height: 100px;
+  //height: 100px;
   width: 50%;
   //border:1px solid red;
   $class-prefix: col-;

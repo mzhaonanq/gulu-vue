@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="{marginRight: -gutter/2 + 'px', marginLeft: -gutter/2 + 'px'}">
+  <div class="row" :style="rowStyle">
     <slot></slot>
   </div>
 </template>
@@ -8,6 +8,12 @@ export default {
   props:{
     gutter:{
       type: [Number,String]
+    }
+  },
+  computed:{
+    rowStyle(){
+      let {gutter} = this
+      return {marginRight: -gutter/2 + 'px', marginLeft: -gutter/2 + 'px'}
     }
   },
   mounted() {
