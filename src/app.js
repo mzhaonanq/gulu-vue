@@ -21,6 +21,6 @@ new Vue ({
       loading4: false,
       message: 'hello'
     }
-  }
+  },
 })
 
