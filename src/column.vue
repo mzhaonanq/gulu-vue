@@ -33,9 +33,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .column{
-  //height: 100px;
-  width: 50%;
-  //border:1px solid red;
+
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {

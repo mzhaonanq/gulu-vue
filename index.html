@@ -8,6 +8,7 @@
   <title>轱辘</title>
   <style>
     *{margin: 0;padding: 0;box-sizing: border-box;}
+    img{max-width: 100%;}
     :root{
       --button-height:32px;
       --font-size:14px;
@@ -29,6 +30,16 @@
     /*.box{*/
     /*  margin: 20px;*/
     /*}*/
+    .demoBox{
+      min-height: 50px;
+      background: grey;
+      border:1px solid red;
+    }
+
+    .logo-wrapper{
+      padding: 10px;
+    }
+
   </style>
 </head>
 <body>
@@ -49,28 +60,38 @@
   <!--  <div class="box">-->
   <!--  <g-input value="王" name="error" error="请输入两个字及以上的姓名"></g-input>-->
   <!--  </div>-->
-  <div style="border:1px solid red">
-  <g-row gutter="20">
-    <g-column>1</g-column>
-    <g-column>1</g-column>
+  <g-row class="topbar">
+    <g-column span="9" class="demoBox">
+      <g-row align="left">
+        <g-column>1</g-column>
+        <g-column>2</g-column>
+        <g-column>3</g-column>
+        <g-column>4</g-column>
+      </g-row>
+    </g-column>
+    <g-column span="15" class="demoBox">
+      <g-row  align="right">
+        <g-column>1</g-column>
+        <g-column>2</g-column>
+        <g-column>3</g-column>
+        <g-column>4</g-column>
+        <g-column>5</g-column>
+        <g-column>6</g-column>
+        <g-column>7</g-column>
+      </g-row>
+    </g-column>
   </g-row>
-  <g-row gutter="20">
-    <g-column>1</g-column>
-    <g-column>1</g-column>
-    <g-column>1</g-column>
+  <g-row class="log-search-qrcode">
+    <g-column span="4" class="demoBox">
+      <g-row align="center">
+      <div class="logo-wrapper">
+      <img class="logo" src="https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="淘宝网logo">
+      </div>
+      </g-row>
+    </g-column>
+    <g-column span="14" class="demoBox"></g-column>
+    <g-column span="6" class="demoBox"></g-column>
   </g-row>
-  <g-row gutter="20">
-    <g-column>1</g-column>
-    <g-column>1</g-column>
-    <g-column>1</g-column>
-    <g-column>1</g-column>
-  </g-row>
-  <g-row gutter="20">
-    <g-column span="2" >2</g-column>
-    <g-column span="1" offset="1">1</g-column>
-    <g-column span="20">20</g-column>
-  </g-row>
-  </div>
 </div>
 <script src="./src/app.js"></script>
 </body>
