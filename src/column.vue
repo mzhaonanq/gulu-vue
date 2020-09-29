@@ -14,6 +14,30 @@ export default {
       gutter: 0
     }
   },
+  props: {
+    span: {
+      type: [Number, String]
+    },
+    offset: {
+      type: [Number, String]
+    },
+    ipad: {
+      type: Object,
+      validator
+    },
+    narrowPc: {
+      type: Object,
+      validator
+    },
+    pc: {
+      type: Object,
+      validator
+    },
+    wildPc: {
+      type: Object,
+      validator
+    }
+  },
   computed: {
     colClass() {
       let {span, offset, ipad, narrowPc, pc, wildPc, createClass} = this
@@ -43,30 +67,6 @@ export default {
         array.push(`offset-${str}${obj.offset}`)
       }
       return array
-    }
-  },
-  props: {
-    span: {
-      type: [Number, String]
-    },
-    offset: {
-      type: [Number, String]
-    },
-    ipad: {
-      type: Object,
-      validator
-    },
-    narrowPc: {
-      type: Object,
-      validator
-    },
-    pc: {
-      type: Object,
-      validator
-    },
-    wildPc: {
-      type: Object,
-      validator
     }
   },
 }
