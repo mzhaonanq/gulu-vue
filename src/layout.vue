@@ -15,7 +15,7 @@
     },
     mounted() {
      this.$children.forEach(vm=>{
-       if(vm.$options.name==='GuLuSider'){
+       if(vm.$options.name==='GuluSider'){
          this.layoutClass.hasSider=true
        }
      })
@@ -27,7 +27,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  border:1px solid green;
   &.hasSider{
     flex-direction: row;
   }
