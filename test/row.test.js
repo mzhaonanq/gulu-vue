@@ -36,4 +36,29 @@ describe('Row', () => {
       done()
     },0)
   })
+  it('接收align属性',(done)=>{
+
+    const Constructor = Vue.extend(Row)
+    const hashMap = {
+      'right':'flex-end',
+      'left':'flex-start',
+      'center':'center'
+    }
+    const array = ['center','right','left']
+    array.map(value=>{
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      const vm = new Constructor({
+        el:div,
+        propsData:{
+          align: value
+        }
+      })
+      const element = vm.$el
+      expect(getComputedStyle(element).justifyContent).to.equal(hashMap[value])
+      vm.$destroy()
+      div.remove()
+    })
+    done()
+  })
 })
