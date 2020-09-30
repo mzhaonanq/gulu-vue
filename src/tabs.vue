@@ -1,0 +1,22 @@
+<template>
+  <slot></slot>
+</template>
+<script>
+export default {
+  name: 'GuluTabs',
+  props: {
+    selected: {
+      type: String,
+      required: true
+    },
+    direction: {
+      type: String,
+      default:'horizontal',
+      validator(value){
+        return ['horizontal','vertical'].indexOf(value)>=0
+      }
+    }
+  }
+}
+</script>
+<style lang="scss" scoped></style>
