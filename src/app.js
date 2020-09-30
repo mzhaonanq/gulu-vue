@@ -39,7 +39,7 @@ new Vue ({
   },
   created() {
     this.$toast(
-      '有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内',
+      'Hello',
       {
       closeButton:{
       text:'知道了',
@@ -47,7 +47,9 @@ new Vue ({
         console.log('知道啦啦啦');
       }
       },
-        enableHtml: true
+        position:'bottom',
+        enableHtml: true,
+        autoClose: false
     })
 
   },
