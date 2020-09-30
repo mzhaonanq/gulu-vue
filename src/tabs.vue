@@ -1,7 +1,10 @@
 <template>
-  <slot></slot>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 <script>
+import Vue from 'vue'
 export default {
   name: 'GuluTabs',
   props: {
@@ -16,6 +19,19 @@ export default {
         return ['horizontal','vertical'].indexOf(value)>=0
       }
     }
+  },
+  data(){
+    return {
+      eventBus: new Vue()
+    }
+  },
+  provide(){
+    return {
+    eventBus:this.eventBus
+    }
+  },
+  created(){
+
   }
 }
 </script>

@@ -1,9 +1,13 @@
 <template>
-  <slot></slot>
+  <div>
+    <slot></slot>
+  </div>
+
 </template>
 <script>
 export default {
-  name: 'GuluTabsBody'
+  name: 'GuluTabsBody',
+  inject:['eventBus'],
 }
 </script>
 <style lang="scss" scoped></style>
