@@ -26,37 +26,38 @@ Vue.component('g-sider',Sider)
 Vue.component('g-toast',Toast)
 Vue.use(Plugin)
 
-new Vue ({
-  el:'#app',
-  data(){
-    return{
-      loading1: false,
-      loading2: false,
-      loading3: false,
-      loading4: false,
-      message: 'hello'
-    }
+new Vue({
+  el: '#app',
+  data: {
+    loading1: false,
+    loading2: true,
+    loading3: false,
+    message: 'hi'
   },
-  created() {
-
+  created(){
   },
-  methods:{
-    showToast(){
-      this.$toast(
-        'Hello',
-        {
-          closeButton:{
-            text:'知道了',
-            callback(toast){
-              console.log('知道啦啦啦');
-            }
-          },
-          position:'top',
-          enableHtml: true,
-          autoClose: false
-        })
-
+  methods: {
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('middle')
+    },
+    showToast3(){
+      this.showToast('bottom')
+    },
+    showToast(position){
+      this.$toast(`你的智商目前为 ${Math.round(Math.random()*100)}。你的智商需要充值！`, {
+        position,
+        enableHtml: false,
+        closeButton: {
+          text: '已充值',
+          callback () {
+            console.log('他说已经充值智商了')
+          }
+        },
+        autoClose: 3,
+      })
     }
   }
 })
-
