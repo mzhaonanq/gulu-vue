@@ -38,23 +38,24 @@ new Vue ({
     }
   },
   created() {
-    this.$toast(
-      'Hello',
-      {
-      closeButton:{
-      text:'知道了',
-        callback(toast){
-        console.log('知道啦啦啦');
-      }
-      },
-        position:'bottom',
-        enableHtml: true,
-        autoClose: false
-    })
 
   },
   methods:{
     showToast(){
+      this.$toast(
+        'Hello',
+        {
+          closeButton:{
+            text:'知道了',
+            callback(toast){
+              console.log('知道啦啦啦');
+            }
+          },
+          position:'top',
+          enableHtml: true,
+          autoClose: false
+        })
+
     }
   }
 })
