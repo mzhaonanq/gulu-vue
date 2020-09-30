@@ -1,17 +1,76 @@
 <template>
-  <div class="toast">
-    <slot></slot>
+  <div class="toast" ref="toast">
+    <div class="message">
+    <slot v-if="!enableHtml"></slot>
+    <div v-else v-html="$slots.default[0]"></div>
+    </div>
+    <div class="line" ref="line"></div>
+    <span @click="onClickButton" v-if="closeButton" class="close">
+      {{closeButton.text}}
+    </span>
   </div>
 </template>
 <script>
 export default {
-  name: 'GuluToast'
+  name: 'GuluToast',
+  props:{
+    autoClose:{
+      type:Boolean,
+      default:true
+    },
+    autoCloseDelay:{
+      type:Number,
+      default: 50
+    },
+    closeButton:{
+      type:Object,
+      default:()=>{
+        return{
+          text:'关闭',
+          callback:undefined
+        }
+      }
+    },
+    enableHtml:{
+      type:Boolean,
+      default: false
+}
+  },
+  mounted(){
+    this.updateStyles()
+    this.execAutoClose()
+  },
+  methods:{
+    close(){
+      this.$el.remove()
+      this.$destroy()
+    },
+    onClickButton(){
+      this.close()
+      if(this.closeButton&& typeof this.closeButton.callback==='function'){
+        this.closeButton.callback(this)
+      }
+    },
+    execAutoClose(){
+      if(this.autoClose){
+        setTimeout(()=>{
+          this.close()
+        },this.autoCloseDelay*1000)
+      }
+    },
+    updateStyles(){
+      this.$nextTick(()=>{
+        this.$refs.line.style.height=
+            `${this.$refs.toast.getBoundingClientRect().height}px`
+      })
+    }
+  }
 }
 </script>
 <style scoped lang="scss">
  $toast-font-size: 14px;
  $toast-line-height: 1.8;
- $toast-height: 40px;
+ $toast-min-height: 40px;
  $toast-background:rgba(0,0,0,0.75);
 .toast {
   position: fixed;
@@ -20,7 +79,7 @@ export default {
   transform: translateX(-50%);
   font-size: $toast-font-size;
   line-height: $toast-line-height;
-  height: $toast-height;
+  min-height: $toast-min-height;
   display: flex;
   align-items: center;
   background: $toast-background;
@@ -29,4 +88,16 @@ export default {
   color: #fff;
   padding:0 16px;
 }
+ .message{
+   padding:8px 0;
+ }
+ .close{
+   padding-left: 16px;
+   flex-shrink: 0;
+ }
+ .line{
+   height: 100%;
+   border-left: 1px solid #666;
+   margin-left:16px;
+ }
 </style>

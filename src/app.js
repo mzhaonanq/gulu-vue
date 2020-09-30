@@ -38,11 +38,21 @@ new Vue ({
     }
   },
   created() {
+    this.$toast(
+      '有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内容有很多内',
+      {
+      closeButton:{
+      text:'知道了',
+        callback(toast){
+        console.log('知道啦啦啦');
+      }
+      },
+        enableHtml: true
+    })
 
   },
   methods:{
     showToast(){
-      this.$toast('我是message')
     }
   }
 })
