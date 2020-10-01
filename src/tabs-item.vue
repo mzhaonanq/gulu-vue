@@ -18,7 +18,7 @@ export default {
       default: false,
     },
     name:{
-      type: String|Number,
+      type: [String, Number],
       required:true
     }
   },
@@ -29,6 +29,7 @@ export default {
   },
   methods:{
     xxx(){
+      if(this.disabled){return}
       this.eventBus && this.eventBus.$emit('update:selected', this.name,this)
       this.$emit('click', this)
     }
@@ -36,7 +37,8 @@ export default {
   computed:{
     classes(){
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       }
     },
   },
@@ -54,6 +56,10 @@ export default {
 
   &.active {
     color: blue;
+  }
+  &.disabled{
+    color:grey;
+    cursor: not-allowed
   }
 }
 </style>
