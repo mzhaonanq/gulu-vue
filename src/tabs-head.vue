@@ -12,9 +12,12 @@
 export default {
   name: 'GuluTabsHead',
   inject:['eventBus'],
-  created() {
-    this.eventBus.$on('update:selected',(item)=>{
-      console.log(item);
+  mounted() {
+    this.eventBus.$on('update:selected',(item,vm)=>{
+      let {width,height,top,left}=vm.$el.getBoundingClientRect()
+      console.log(width, height, top, left);
+      this.$refs.line.style.width=`${width}px`
+      this.$refs.line.style.left=`${left}px`
     })
   }
 }
@@ -30,8 +33,8 @@ $tab-height:40px;
   > .line{
     position: absolute;
     bottom: 0;
-    border-bottom:3px solid blue;
-    width: 100px;
+    border-bottom:2px solid blue;
+    transition: all .5s;
   }
   > .actions-wrapper{
     margin-left: auto;

@@ -29,7 +29,8 @@ export default {
   },
   methods:{
     xxx(){
-      this.eventBus.$emit('update:selected', this.name)
+      this.eventBus && this.eventBus.$emit('update:selected', this.name,this)
+      this.$emit('click', this)
     }
   },
   computed:{
