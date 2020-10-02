@@ -1,21 +1,22 @@
 import Vue from 'vue'
-import Button from  './button'
-import Input from './input'
+import Button from './button'
 import ButtonGroup from './buttonGroup'
-import Row from './row'
 import Column from './column'
-import Layout from './layout'
-import Header from './header'
 import Content from './content'
 import Footer from './footer'
-import Sider from './sider'
-import Toast from './toast'
+import Header from './header'
+import Input from './input'
+import Layout from './layout'
 import Plugin from './plugin'
+import Popover from './popover'
+import Row from './row'
+import Sider from './sider'
 import Tabs from './tabs'
-import TabsHead from './tabs-head'
 import TabsBody from './tabs-body'
+import TabsHead from './tabs-head'
 import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
+import Toast from './toast'
 
 Vue.component('g-button',Button)
 Vue.component('g-icon',Icon)
@@ -35,7 +36,7 @@ Vue.component('g-tabs-head', TabsHead)
 Vue.component('g-tabs-body', TabsBody)
 Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-pane', TabsPane)
-
+Vue.component('g-popover', Popover)
 
 new Vue({
   el: '#app',
@@ -45,6 +46,9 @@ new Vue({
   created(){
   },
   methods: {
+    yyy(){
+      console.log('yyy')
+  },
     showToast1(){
       this.showToast('top')
     },
