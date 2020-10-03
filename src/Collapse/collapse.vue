@@ -31,8 +31,8 @@
       this.eventBus.$emit('update:selected', this.selected)
       this.eventBus.$on('update:addSelected', (name) => {
         let selectedCopy = JSON.parse(JSON.stringify(this.selected))
-        if (this.single) {
-          selectedCopy = [name]
+        if (this.single) { 
+          selectedCopy = [name] 
         } else {
           selectedCopy.push(name)
         }
@@ -46,7 +46,7 @@
         this.eventBus.$emit('update:selected', selectedCopy)
         this.$emit('update:selected', selectedCopy)
       })
-    }
+    } 
   }
 </script>
 
