@@ -8,6 +8,7 @@
     </div>
   </div>
 </template>
+
 <script>
   export default {
     name: "GuluCollapseItem",
@@ -15,66 +16,52 @@
       title: {
         type: String,
         required: true
+      },
+      name: {
+        type: String,
+        required: true
       }
     },
     data () {
       return {
-        open: false
+        open: false,
       }
     },
     inject: ['eventBus'],
     mounted () {
-      this.eventBus && this.eventBus.$on('update:selected', (vm) => {
-        if (vm !== this) {
-          this.close()
+      this.eventBus && this.eventBus.$on('update:selected', (names) => {
+        if (names.indexOf(this.name) >= 0) {
+          this.open = true
+        } else {
+          this.open = false
         }
       })
     },
     methods: {
       toggle () {
         if (this.open) {
-          this.open = false
+          this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
         } else {
-          this.open = true
-          this.eventBus && this.eventBus.$emit('update:selected', this)
+          this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
         }
       },
-      close () {
-        this.open = false
-      }
     },
   }
 </script>
 
-
-<style lang="scss" scoped>
-$grey:#ddd;
-$border-radius:4px;
-.collapseItem{
-    .title{
-        border:1px solid $grey;
-        margin-top: -1px;
-        margin-left: -1px;
-        margin-right: -1px;
-        min-height:32px ;
-        display:flex;
-        align-items:center;
-        padding:0 8px;
+<style scoped lang="scss">
+  $grey: #ddd;
+  $border-radius: 4px;
+  .collapseItem {
+    > .title { border: 1px solid $grey; margin-top: -1px; margin-left: -1px; margin-right: -1px;
+      min-height: 32px; display: flex; align-items: center; padding: 0 8px;
     }
     &:first-child {
-      > .title {
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
-      }
+      > .title { border-top-left-radius: $border-radius; border-top-right-radius: $border-radius; }
     }
-        &:last-child {
-      > .title:last-child {
-        border-bottom-left-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-      }
+    &:last-child {
+      > .title:last-child { border-bottom-left-radius: $border-radius; border-bottom-right-radius: $border-radius; }
     }
-    .content{
-    padding:8px;
-    }
-}
+    > .content { padding: 8px; }
+  }
 </style>
