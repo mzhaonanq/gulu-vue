@@ -5,11 +5,7 @@
     <g-button :loading='true'>点击按钮</g-button>
     <g-button disabled>点击按钮</g-button>
 
-    <pre>
-      <code>
-        {{content}}
-      </code>
-    </pre>
+    <pre><code>{{content}}</code></pre>
 </div>
 </template>
 
@@ -23,7 +19,7 @@ export default {
     <g-button name="setting">设置</g-button>
     <g-button :loading='true'>点击按钮</g-button>
     <g-button disabled>点击按钮</g-button>
-    `
+    `.replace(/\t+| +/g,'').trim()
     }
   },
   components:{

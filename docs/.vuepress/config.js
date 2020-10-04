@@ -1,6 +1,7 @@
 module.exports = {
-    title: '轱辘UUC',
-    description: '玩得开心',
+    base: "/gulu-vue/",
+    title: '轱辘轱辘',
+    description: '简易UI组件',
     themeConfig: {
             sidebar: [
             {
@@ -14,7 +15,10 @@ module.exports = {
             },
             {
               title: '组件',
-              children: [ '/components/button'],
+              children: [ '/components/button','/components/input','/components/icon',
+            '/components/grid','/components/layout','/components/tabs',
+            'components/collapse','components/toast','/components/popover'
+            ],
               //initialOpenGroupIndex: -1 // 可选的, 默认值是 0
             }
           ]
