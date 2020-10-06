@@ -8,25 +8,25 @@
     <g-popover>
       <g-button>上方弹出</g-button>
       <template slot="content">
-        弹出内容
+        Hello World
       </template>
     </g-popover>
     <g-popover position="bottom">
       <g-button>下方弹出</g-button>
       <template slot="content">
-        弹出内容
+        Hello World
       </template>
     </g-popover>
     <g-popover position="left">
       <g-button>左边弹出</g-button>
       <template slot="content">
-        弹出内容
+        Hello World
       </template>
     </g-popover>
     <g-popover position="right">
       <g-button>右边弹出</g-button>
       <template slot="content">
-        弹出内容
+        Hello World
       </template>
     </g-popover>
 
@@ -51,25 +51,25 @@
           <g-popover>
             <g-button>上方弹出</g-button>
             <template slot="content">
-              弹出内容
+              Hello World
             </template>
           </g-popover>
           <g-popover position="bottom">
             <g-button>下方弹出</g-button>
             <template slot="content">
-              弹出内容
+              Hello World
             </template>
           </g-popover>
           <g-popover position="left">
             <g-button>左边弹出</g-button>
             <template slot="content">
-              弹出内容
+             Hello World
             </template>
           </g-popover>
           <g-popover position="right">
             <g-button>右边弹出</g-button>
             <template slot="content">
-              弹出内容
+              Hello World
             </template>
           </g-popover>
       `.replace(/^ {8}/gm, '').trim()
@@ -77,7 +77,7 @@
     },
     methods: {
       onClickButton () {
-        this.$toast('<strong style="color:red;">加粗的提示</strong>', {
+        this.$toast('<strong style="color:red;">加粗的Hello World</strong>', {
           enableHtml: true
         })
       }
