@@ -53,7 +53,7 @@ components:{
 此样式支持IE 8 及以上浏览器 
 
 ## 文档
-  详见组件官网   [组件官网](http://honghuada.top/gulu-vue/)
+  详见组件栏内容
 ## 提问
 
 ## 变更记录
