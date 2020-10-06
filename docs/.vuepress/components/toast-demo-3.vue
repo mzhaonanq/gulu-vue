@@ -3,7 +3,7 @@
   <div style="padding-top: 16px;">
     <h2>支持 HTML</h2>
     <p>
-      <strong>预览</strong>
+      <strong>使用预览</strong>
     </p>
 
     <div>
@@ -46,11 +46,11 @@
           </div>
           methods: {
             onClickButton () {
-              this.$toast('你知道我在等你吗？', {
+              this.$toast('该弹出框可关闭', {
                 closeButton: {
                   text: '知道了',
                   callback: () => {
-                    console.log('他说知道了')
+                    console.log('Hello World')
                   }
                 }
               })
@@ -61,7 +61,7 @@
     },
     methods: {
       onClickButton () {
-        this.$toast('<strong style="color:red;">加粗的提示</strong>', {
+        this.$toast('<strong style="color:red;">该弹出框可关闭</strong>', {
           enableHtml: true
         })
       }
