@@ -2,7 +2,7 @@
   <div style="padding-top: 16px;">
     <h2>设置 gutter</h2>
     <p>
-      <strong>预览</strong>
+      <strong>使用预览</strong>
     </p>
     <g-row class="demoRow" gutter="10">
       <g-col span="8">
