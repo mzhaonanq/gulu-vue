@@ -1,6 +1,6 @@
 module.exports = {
     base: "/gulu-vue/",
-    title: '轱辘轱辘',
+    title: 'gulugulu~~',
     description: '简易UI组件',
     themeConfig: {
             sidebar: [

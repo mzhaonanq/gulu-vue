@@ -2,11 +2,46 @@
 
 [![Build Status](https://travis-ci.org/mzhaonanq/gulu-vue.svg?branch=master)](https://travis-ci.org/mzhaonanq/gulu-vue) 
 
-## 介绍
+# 介绍
 
-## 开始使用
+这是一个简易的UI组件库
 
-1. 添加CSS样式
+**注意：该UI组件尚未完成，请不要在生产环境中使用**
+
+# 安装
+
+1. 安装 gulu
+
+``` 
+npm install mzhaonanq-test-gulu
+```
+
+或
+
+```
+yarn add mzhaonanq-test-gulu
+```
+
+2. 引入 gulu
+
+```javascript
+import { Button, ButtonGroup, Icon, Input, Row, Column, Header, Layout, Sider,
+    Footer, Content, Popover, TabsItem, Tabs, TabsHead, TabsBody, TabsPane, Toast, Plugin} 
+    from 'mzhaonanq-test-gulu'
+
+export default {
+...
+components:{
+  'g-button':Button,
+  'g-button-group':ButtonGroup,
+  'g-input':input,
+  ...  
+  },
+...
+}
+```
+
+3. 添加样式
 
 使用本组件前，需要在css中添加border-box
 
@@ -17,47 +52,8 @@
 ```
 此样式支持IE 8 及以上浏览器 
 
-目前还需设置默认颜色等变量，后续会改为SCSS变量
-```css
-    :root{
-      --button-height:32px;
-      --font-size:14px;
-      --button-background:#fff;
-      --button-active-background:#eee;
-      --border-radius:4px;
-      --color:#333;
-      --border-color:#999;
-      --border-color-hover:#666 ;
-    }
-```
- 
- IE 15 及以上浏览器支持此样式
-
-2. 安装 gulu
-
-``` 
-npm i --save mzhaonanq-test-gulu
-```
-
-3. 引入 gulu
-
-```vue
-import {Button ,ButtonGroup,ICon} from 'mzhaonanq-test-gulu'
-import 'mzhaonanq-test-gulu/dist/index.css'
-
-export default {
-...
-components:{
-  Button,
-  ButtonGroup,
-  Icon  
-  },
-...
-}
-```
-
 ## 文档
-
+  详见组件官网   [组件官网](http://honghuada.top/gulu-vue/)
 ## 提问
 
 ## 变更记录
