@@ -2,13 +2,13 @@
   <div style="padding-top: 16px;">
     <h2>支持 HTML</h2>
     <p>
-      <strong>预览</strong>
+      <strong>使用预览</strong>
     </p>
 
     <g-popover>
       <g-button>上方弹出</g-button>
       <template slot="content">
-        Hello World
+        <strong style="color:red">Hello World</strong>
       </template>
     </g-popover>
     <g-popover position="bottom">
@@ -51,7 +51,7 @@
           <g-popover>
             <g-button>上方弹出</g-button>
             <template slot="content">
-              Hello World
+              <strong style="color:red">Hello World</strong>
             </template>
           </g-popover>
           <g-popover position="bottom">
@@ -73,13 +73,6 @@
             </template>
           </g-popover>
       `.replace(/^ {8}/gm, '').trim()
-      }
-    },
-    methods: {
-      onClickButton () {
-        this.$toast('<strong style="color:red;">加粗的Hello World</strong>', {
-          enableHtml: true
-        })
       }
     },
   }

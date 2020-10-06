@@ -2,13 +2,13 @@
   <div style="padding-top: 16px;">
     <h2>将触发方式改为 hover</h2>
     <p>
-      <strong>预览</strong>
+      <strong>使用预览</strong>
     </p>
 
     <g-popover trigger="hover">
       <g-button>上方弹出</g-button>
       <template slot="content">
-        Hi
+       <strong style="color:blue">Hi</strong>
       </template>
     </g-popover>
     <g-popover position="bottom" trigger="hover">
@@ -51,7 +51,7 @@
           <g-popover trigger="hover">
             <g-button>上方弹出</g-button>
             <template slot="content">
-              Hi
+              <strong style="color:blue">Hi</strong>
             </template>
           </g-popover>
           <g-popover position="bottom" trigger="hover">
@@ -73,13 +73,6 @@
             </template>
           </g-popover>
       `.replace(/^ {8}/gm, '').trim()
-      }
-    },
-    methods: {
-      onClickButton () {
-        this.$toast('<strong style="color:red;">加粗Hi</strong>', {
-          enableHtml: true
-        })
       }
     },
   }
