@@ -1,7 +1,7 @@
 {
   "name": "mzhaonanq-test-gulu",
-  "version": "0.0.3",
-  "description": "这是一个UI组件",
+  "version": "0.0.8",
+  "description": "这是一个简易UI组件",
   "main": "dist/index.js",
   "scripts": {
     "start": "parcel index.html --no-cache",

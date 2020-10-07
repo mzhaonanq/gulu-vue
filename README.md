@@ -28,7 +28,7 @@ yarn add mzhaonanq-test-gulu
 import { Button, ButtonGroup, Icon, Input, Row, Column, Header, Layout, Sider,
     Footer, Content, Popover, TabsItem, Tabs, TabsHead, TabsBody, TabsPane, Toast, Plugin} 
     from 'mzhaonanq-test-gulu'
-
+import 'mzhaonanq-test-gulu/dist/index.css'
 export default {
 ...
 components:{
