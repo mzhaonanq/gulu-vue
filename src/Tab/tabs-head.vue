@@ -13,7 +13,7 @@
     inject: ['eventBus'],
     mounted () {
       this.eventBus.$on('update:selected', (item, vm) => {
-        this.updateLinePosition(vm)
+      this.updateLinePosition(vm)
       })
     },
     methods: {
@@ -22,6 +22,7 @@
         let {left: left2} = this.$refs.head.getBoundingClientRect()
         this.$refs.line.style.width = `${width}px`
         this.$refs.line.style.left = `${left - left2}px`
+        
       }
     }
   }

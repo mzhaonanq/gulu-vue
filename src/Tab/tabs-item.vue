@@ -23,6 +23,7 @@ export default {
     }
   },
   created(){
+      
       this.eventBus && this.eventBus.$on('update:selected',name=>{
       this.active = name === this.name
       })
@@ -31,7 +32,6 @@ export default {
     onClick(){
       if(this.disabled){return}
       this.eventBus && this.eventBus.$emit('update:selected', this.name,this)
-      this.$emit('click')
     }
   },
   computed:{
