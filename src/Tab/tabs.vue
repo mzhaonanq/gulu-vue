@@ -41,9 +41,9 @@ export default {
     selectTab() {
       this.$children.forEach((vm) => {
         if (vm.$options.name === "GuluTabsHead") {
-          console.log(vm.$options)
+     
           vm.$children.forEach((childVm) => {
-            console.log(childVm)
+       
             if (
               childVm.$options.name === "GuluTabsItem" 
                && childVm.name === this.selected
