@@ -47,7 +47,7 @@
             onClickButton () {
               this.$toast('该弹出框可关闭', {
                 closeButton: {
-                  text: '知道了',
+                  text: '关闭',
                   callback: () => {
                     console.log('Hello World')
                   }
@@ -62,7 +62,7 @@
       onClickButton () {
         this.$toast('该弹出框可关闭', {
           closeButton: {
-            text: '知道了',
+            text: '关闭',
             callback: () => {
               console.log('Hello World')
             }

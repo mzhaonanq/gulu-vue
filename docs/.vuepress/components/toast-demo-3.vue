@@ -1,4 +1,3 @@
-  
 <template>
   <div style="padding-top: 16px;">
     <h2>支持 HTML</h2>
@@ -17,25 +16,25 @@
   </div>
 </template>
 <style>
-  .gulu-toast {
-    z-index: 30 !important;
-  }
+.gulu-toast {
+  z-index: 30 !important;
+}
 </style>
 <style scoped>
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 </style>
 <script>
-  import plugin from '../../../src/Toast/plugin'
-  import Button from '../../../src/Button/button'
-  import Vue from 'vue'
-  Vue.use(plugin)
-  export default {
-    components: {'g-button':Button},
-    data () {
-      return {
-        content: `
+import plugin from "../../../src/Toast/plugin";
+import Button from "../../../src/Button/button";
+import Vue from "vue";
+Vue.use(plugin);
+export default {
+  components: { "g-button": Button },
+  data() {
+    return {
+      content: `
           <style>
             .gulu-toast {
               z-index: 30;
@@ -46,7 +45,7 @@
           </div>
           methods: {
             onClickButton () {
-              this.$toast('该弹出框可关闭', {
+              this.$toast('该弹窗支持HTML', {
                 closeButton: {
                   text: '知道了',
                   callback: () => {
@@ -56,15 +55,23 @@
               })
             }
           },
-      `.replace(/^ {8}/gm, '').trim()
-      }
+      `
+        .replace(/^ {8}/gm, "")
+        .trim(),
+    };
+  },
+  methods: {
+    onClickButton() {
+      this.$toast('<strong style="color:red;">该弹窗支持HTML</strong>', {
+        enableHtml: true,
+        closeButton: {
+          text: "知道了",
+          callback: () => {
+            console.log("Hello World");
+          },
+        },
+      });
     },
-    methods: {
-      onClickButton () {
-        this.$toast('<strong style="color:red;">该弹出框可关闭</strong>', {
-          enableHtml: true
-        })
-      }
-    },
-  }
+  },
+};
 </script>
