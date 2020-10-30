@@ -95,9 +95,33 @@
   </div>
 </template>
 <style scoped>
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
+.demoRow {
+  margin: 10px 0;
+}
+.demoCol {
+  height: 50px;
+  border: 1px solid #ccc;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<script>
+import GRow from "../../../src/Grid/row";
+import GCol from "../../../src/Grid/column";
+export default {
+  components: { "g-row": GRow, "g-col": GCol },
+  data() {
+    return {
+      content: `
+          * {
+            box-sizing: border-box;
+          }
+            }
   .demoRow{
     margin: 10px 0;
   }
@@ -109,18 +133,6 @@
     justify-content: center;
     align-items: center;
   }
-</style>
-<script>
-  import GRow from '../../../src/Grid/row'
-  import GCol from '../../../src/Grid/column'
-  export default {
-    components: {'g-row':GRow,'g-col':GCol},
-    data () {
-      return {
-        content: `
-          * {
-            box-sizing: border-box;
-          }
           <g-row class="demoRow">
             <g-col span="8">
               <div class="demoCol">8</div>
@@ -204,8 +216,10 @@
               <div class="demoCol">2</div>
             </g-col>
           </g-row>
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    }
-  }
+      `
+        .replace(/^ {8}/gm, "")
+        .trim(),
+    };
+  },
+};
 </script>
