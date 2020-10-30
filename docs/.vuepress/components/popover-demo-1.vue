@@ -8,7 +8,7 @@
     <g-popover>
       <g-button>上方弹出</g-button>
       <template slot="content">
-        <strong style="color:red">Hello World</strong>
+        <strong style="color:red">支持HTML</strong>
       </template>
     </g-popover>
     <g-popover position="bottom">
@@ -51,7 +51,7 @@
           <g-popover>
             <g-button>上方弹出</g-button>
             <template slot="content">
-              <strong style="color:red">Hello World</strong>
+              <strong style="color:red">支持HTML</strong>
             </template>
           </g-popover>
           <g-popover position="bottom">
